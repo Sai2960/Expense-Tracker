@@ -8,9 +8,23 @@ const expenseRoutes = require('./routes/expenses');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/expense-tracker';
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:3000';
 
-app.use(cors({ origin: CLIENT_ORIGIN }));
+const allowedOrigins = [
+  'https://expense-tracker-kappa-one-25.vercel.app',
+  'https://expense-tracker-git-main-sais-projects-daab7a9a.vercel.app',
+  'http://localhost:3000'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
