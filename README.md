@@ -11,16 +11,9 @@ A full-stack expense tracking application built with the **MERN stack** (MongoDB
 🔗 **Live Demo:** [your-vercel-url.vercel.app](#) &nbsp;|&nbsp; 🔗 **API:** [your-render-url.onrender.com](#)
 
 ---
+## 📸 Screenshot
 
-## 📸 Screenshots
-
-<!-- Add your screenshot files to a `screenshots/` folder in the repo, then update these paths -->
-
-| Add Expense | Expense List |
-|:---:|:---:|
-| ![Add Expense Form](./screenshots/add-expense.png) | ![Expense List](./screenshots/expense-list.png) |
-
----
+![Expense Tracker Dashboard](./screenshots/dashboard.png)
 
 ## ✨ Features
 
